@@ -1,0 +1,34 @@
+<div class="container-fluid pb-5">
+    <div class="row justify-content-center mt-3 p-2 p-md-5">
+        <div class="col-12 text-center justify-content-center header">
+            <h3 class="container-heading">{{ container_title }}</h3>
+            <h1 class="container-subheading">{{ container_subheading }}</h1>
+            <p class="container-text">{{ container_text }}</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center" >
+            <div class="col-4 col-md-4">
+                <ul *ngFor="let location of locations; let i = index">
+                    <li><a (click)="selectLocation(i)">{{ location.name }}</a></li>
+                </ul>
+            </div>
+            <div class="col-8 col-md-4" *ngFor="let detail of details">
+                <div *ngIf="details.name === location_name">
+                    <h1>{{ detail.name }}, {{ detail.area }}</h1>
+                <p>{{ detail.address }}</p>
+                <p>{{ detail.contact }}</p>
+                </div>
+                
+            </div>
+            <!-- <div class="col-8 col-md-4"  *ngIf="" >
+                <h1>{{ location.name }}, {{ location.area }}</h1>
+                <p>{{ location.address }}</p>
+                <p>{{ location.contact }}</p>
+            </div> -->
+            <div class="col-12 col-lg-4">
+                Test map
+            </div>
+        </div>
+    </div>
+</div>

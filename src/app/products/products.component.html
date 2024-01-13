@@ -1,0 +1,32 @@
+<div class="container-fluid w-100 pb-5">
+    <div class="row justify-content-center py-5">
+        <div class="col-12 text-center">
+            <h3 class="container-heading">{{ container_title }}</h3>
+        </div>
+    </div>
+    <div class="carousel products_carousel">
+        <ngb-carousel
+        #carousel
+        [interval]="7000"
+        (slide)="onSlide($event)"
+        class="py-5-lg"
+        >
+            <ng-template ngbSlide *ngFor="let prod of products">
+                <div class="container">
+                    <div class="row row_height mb-3">
+                        <div class="col-12 col-sm-6 details_of_product me-auto">
+                            <h4 class="subheading">{{ prod.subheading }}</h4>
+                            <h1 class="heading">{{ prod.heading }}</h1>
+                            <p class="details">"{{ prod.details }}"</p>
+                            <button class="btn"><a [href]="prod.link">{{ prod.button }}</a></button>
+                        </div>
+                        <div class="col-12 col-sm-6 picsum-img-wrapper">
+                            <img [src]="prod.img_path" [alt]="prod.img_alt" />
+                        </div>
+                    </div>
+                </div>
+                
+            </ng-template>
+        </ngb-carousel>
+    </div>
+</div>

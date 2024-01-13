@@ -1,0 +1,24 @@
+<div class="container-fluid pb-5">
+    <div class="row justify-content-center py-5">
+        <div class="col-12 text-center justify-content-center">
+            <h3 class="container-heading">{{ container_title }}</h3>
+            <h1 class="container-title pt-3">{{ main_title }}</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row top_blogs">
+            <div class="col-12 col-md-4 card-group" *ngFor="let blog of blog_posts.slice(0,3)">
+                <div class="card" [id]='blog.id'>
+                    <img [src]='blog.url' class="card-img-top" [alt]='blog.alt'>
+                    <div class="card-body">
+                      <h5 class="card-title cardHeading pt-2">{{ blog.heading }}</h5>
+                      <p class="card-text shortIt">{{ blog.text }}</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a class="btn btnReadMore px-4">Read More</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>

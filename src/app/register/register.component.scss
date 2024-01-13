@@ -1,0 +1,108 @@
+.container-fluid{
+    .row{
+        .header{
+            .container-heading{
+                font-family: 'Raleway';
+                font-size: 42px;
+                line-height: 72px;
+                font-weight: 800;
+                color: #fff;
+            }
+            .container-text{
+                font-family: 'Lato';
+                font-size: 26px;
+                line-height: 28px;
+                letter-spacing: 5.2px;
+                font-weight: 200;
+                color: #FD7000;
+            }
+        }
+    }
+    .container{
+        form{
+            .row{
+                .col-12{
+                    input{
+                        box-shadow: none !important;
+                    }
+                    small{
+                        padding-top: 5px;
+                        padding-left: .5em;
+                        font-family: 'Lato';
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #cc0000;
+                    }
+                    label{
+                        padding-left: .7em;
+                        padding-top: .15em;
+                        color: #fff;
+                    }
+                    .required{
+                        font-family: 'Lato';
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: #cc0000;
+                    }
+                }
+                .col-12{
+                    .Registerbtn{
+                        font-family: 'Lato';
+                        font-size: 18px;
+                        font-weight: 500;
+                        color:#fff;
+                        // background-color: rgba(255, 255, 255, 0.7);
+                        border: 2px solid rgba(255,255, 255, 0.7);
+                    }
+                    .RegisterBtn:hover{
+                        text-decoration: underline;
+                        background-color: #FD7000;
+                        color: #01142E;
+                        border: 2px solid rgba(255,255, 255, 0.7);
+                    }
+                }
+            }
+            .division{
+                width: 80%;
+                border: .2em solid #FD7000;
+                // background-color: #000;
+                opacity: 1;
+                border-radius: 15px;
+            }
+        }
+    }
+    .container{
+        .row{
+            .col-12{
+                .regDetailsCard{
+                    h1{
+                        font-family: 'Lato';
+                        font-size: 26px;
+                        line-height: 28px;
+                        letter-spacing: 5.2px;
+                        font-weight: 200;
+                        color: #FD7000;
+                    }
+                    .card-details{
+                        font-family: 'Raleway';
+                        font-size: 16px;
+                        line-height: 28px;
+                        letter-spacing: 5.2px;
+                        font-weight: 200;
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+}
+input.ng-invalid.ng-touched {
+    border: #FF0000 1px solid;
+}
+
+@media (max-width: 767px) {
+    .container-text{
+        font-size: 30px !important;
+        line-height: 40px !important;
+    }
+}

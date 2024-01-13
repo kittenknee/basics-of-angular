@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'One-page_website';
+  a = 1;
+
+  constructor( private route: Router){}
+  
+  // Decide to display which component
+  tabActive(){
+    if(this.a =1){
+      this.route.navigate(["/home"])
+    }
+  }
 }
+

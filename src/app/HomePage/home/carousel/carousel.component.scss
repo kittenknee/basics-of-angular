@@ -1,0 +1,80 @@
+.carousel{
+    .picsum-img-wrapper{
+        background-color: #01142E;
+        height: 90vh;
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: 1% 1% 100% 100%;
+        }
+    }
+}
+.home_carousel::ng-deep .carousel-indicators{
+    margin: 0 0;
+    padding: 15px 50px;
+    justify-content: start;
+    button{
+        width: 15px;
+        height: 15px;
+        border: 1px solid #000;
+        border-radius: 10px;
+        background-color: #fff;
+        opacity: .8;
+    }
+    button.active{
+        background-color: #FE6F00;
+        border: 1px solid #fff;
+    }
+} 
+
+@media(max-width: 500px){
+    .carousel{
+        .picsum-img-wrapper{
+            height: 20vh !important;
+            img{
+                height: 100% !important;
+                width: 100%;
+                object-fit: cover;
+                object-position: center center;
+            }
+        }
+    }
+    .home_carousel::ng-deep .carousel-indicators{
+        padding: 10px 10px;
+        justify-content: center;
+        button{
+            width: 10px;
+            height: 10px;
+            opacity: 1;
+        }
+        button.active{
+            background-color: #FE6F00;
+        }
+    }
+}
+
+@media(max-width: 1000px) and (min-width: 501px){
+    .carousel{
+        .picsum-img-wrapper{
+            height: 40vh !important;
+            img{
+                height: 100% !important;
+                width: 100%;
+                object-fit: cover;
+                object-position: center center;
+            }
+        }
+    }
+    .home_carousel::ng-deep .carousel-indicators{
+        padding: 10px 10px;
+        button{
+            width: 10px;
+            height: 10px;
+            opacity: 1;
+        }
+        button.active{
+            background-color: #FE6F00;
+        }
+    }
+}

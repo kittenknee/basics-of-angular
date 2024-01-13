@@ -1,0 +1,18 @@
+<section class="navbar">
+    <app-navbar></app-navbar>
+</section>
+<section class="register my-auto" >
+    <div class="container-wide">
+        <app-register (registerDetails)="getData($event)"></app-register>
+    </div>    
+</section>
+<section class="register-table my-auto">
+    <div class="container-wide">
+        <app-register-table [receivingData]="registrationData" ></app-register-table>
+        <!-- <p>{{registrationData | json }}</p> -->
+    </div>    
+</section>
+<section class="footer bottom">
+    <app-footer></app-footer>
+</section>
+<router-outlet></router-outlet>

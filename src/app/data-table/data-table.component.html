@@ -1,0 +1,47 @@
+<div class="container-fluid pb-5">
+    <div class="row justify-content-center pt-5 pb-3">
+        <div class="col-12 text-center">
+            <h3 class="container-heading">{{ container_title }}</h3>
+        </div>
+    </div>
+    <div class="container table-responsive">
+        <table class="table table-bordered align-middle dataTable">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">ID</th>
+                <th scope="col">User ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Completed</th>
+                <th scope="col">Send</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let data of datas; let i = index">
+              <tr class="text-center">
+                <td>{{ data.id }}</td>
+                <td>{{ data.userId }}</td>
+                <td class="text-start">{{ data.title }}</td>
+                <td>{{ data.completed }}</td>
+                <td>
+                    <button type="button" class="btn sendDataBtn" (click)="sendData(i)" data-bs-toggle="modal" data-bs-target="#DataModal">View Data</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="modal fade me-auto mx-auto ms-auto" id="DataModal" tabindex="-1" aria-labelledby="DataModalDefault" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Sent Data:</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <app-data-display [sentData]="dataSending" (updateData)="updated($event)" ></app-data-display>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Close</button>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+.container-fluid{
+    .row{
+        .header{
+            .container-heading{
+                font-family: 'Raleway';
+                font-size: 42px;
+                line-height: 72px;
+                font-weight: 800;
+                color: #fff;
+            }
+            .container-text{
+                font-family: 'Lato';
+                font-size: 26px;
+                line-height: 28px;
+                letter-spacing: 5.2px;
+                font-weight: 200;
+                color: #FD7000;
+            }
+        }
+    }
+    .container{
+        form{
+            .row{
+                .col-12{
+                    input{
+                        box-shadow: none !important;
+                    }
+                    small{
+                        padding-top: 5px;
+                        padding-left: .5em;
+                        font-family: 'Lato';
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #FF0000;
+                    }
+                    label{
+                        padding-left: .7em;
+                        padding-top: .15em;
+                        color: #fff;
+                    }
+                    a{
+                        small.forgetPass{
+                            padding-top: 5px;
+                            padding-left: .5em;
+                            font-family: 'Lato';
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #0D6EFD;
+                        }
+                    }
+                }
+                .col-2{
+                    .signIn-btn{
+                        font-family: 'Lato';
+                        font-size: 18px;
+                        font-weight: 500;
+                        color:#fff;
+                        // background-color: rgba(255, 255, 255, 0.7);
+                        border: 2px solid rgba(255,255, 255, 0.7);
+                    }
+                }
+            }
+        }
+    }
+}
+input.ng-invalid.ng-touched {
+    border: red 1px solid;
+}
+
+@media (max-width: 767px) {
+    .container-text{
+        font-size: 30px !important;
+        line-height: 40px !important;
+    }
+}

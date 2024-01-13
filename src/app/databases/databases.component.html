@@ -1,0 +1,29 @@
+<section class="navbar">
+    <app-navbar></app-navbar>
+</section>
+<section class="buttons text-center p-3 my-auto">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-md-6">
+                <button class="btn showBtn" (click)="showJSON()">JSON Data</button>
+            </div>
+            <div class="col-6 col-md-6">
+                <button class="btn showBtn" (click)="showLive()">Live Data</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="data my-auto" *ngIf="JSONData == true">
+    <div class="container-wide">
+        <app-data-table></app-data-table>
+    </div>
+</section>
+<section class="dataLive my-auto" *ngIf="LiveData == true">
+    <div class="container-wide">
+        <app-data-live></app-data-live>
+    </div>
+</section>
+<section class="footer bottom">
+    <app-footer></app-footer>
+</section>
+<router-outlet></router-outlet>
