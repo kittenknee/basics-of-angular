@@ -1,0 +1,47 @@
+<nav class="navbar fixed-top navbar-expand-lg" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="../../assets/logo.png"> &nbsp;Keypoint Technology</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-2 ms-auto text-center nav-underline">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-link active" routerLink="/home" #home="routerLinkActive"><i class="bi bi-house-fill" *ngIf="home.isActive"></i> &nbsp;Home</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" routerLinkActive="active-link active" routerLink="/gallery" #gallery="routerLinkActive"><i class="bi bi-images" *ngIf="gallery.isActive"></i> &nbsp;Gallery</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" routerLinkActive="active-link active" routerLink="/blogs" #blogs="routerLinkActive"><i class="bi bi-chat-right-quote" *ngIf="blogs.isActive"></i> &nbsp;Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-link active" routerLink="/about-us" #aboutus="routerLinkActive"><i class="bi bi-people-fill" *ngIf="aboutus.isActive"></i> &nbsp;About Us</a>
+          </li>
+          <li class="nav-item" *ngIf="!isAuth">
+            <a class="nav-link" routerLinkActive="active-link active" routerLink="/login" #login="routerLinkActive"><i class="bi bi-box-arrow-in-right" *ngIf="login.isActive"></i> &nbsp;Login</a>
+          </li>
+          <li class="nav-item" *ngIf="!isAuth">
+            <a class="nav-link" routerLinkActive="active-link active" routerLink="/register" #register="routerLinkActive"><i class="bi bi-pencil-square" *ngIf="register.isActive"></i> &nbsp;Register</a>
+          </li>
+          <li class="nav-item" *ngIf="isAuth">
+            <a class="nav-link" routerLinkActive="active-link active" routerLink="/dashboard" #dashboard="routerLinkActive"><i class="bi bi-laptop"  *ngIf="dashboard.isActive"></i> &nbsp;Dashboard</a>
+          </li>
+          <li class="nav-item" *ngIf="isAuth">
+            <a class="nav-link" routerLinkActive="active-link active" routerLink="/database" #database="routerLinkActive"><i class="bi bi-database" *ngIf="database.isActive"></i> &nbsp;Database</a>
+          </li>
+          <li class="nav-item" *ngIf="isAuth">
+            <a class="nav-link" routerLinkActive="active-link active" routerLink="/user" #user="routerLinkActive"><i class="bi bi-person-fill" *ngIf="user.isActive"></i> &nbsp;User</a>
+          </li>
+          <li class="nav-item" *ngIf="isAuth">
+            <a class="nav-link" routerLinkActive="active-link active" routerLink="/login" #logout="routerLinkActive" (click)="isNotAuth()"><i class="bi bi-box-arrow-in-right" *ngIf="logout.isActive"></i> &nbsp;Logout</a>
+          </li>
+        </ul>
+        <form class="d-flex py-2 mx-auto col-12 col-md-4" role="search" *ngIf="!isAuth">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>

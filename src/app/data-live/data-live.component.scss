@@ -1,0 +1,227 @@
+.container-fluid{
+    .row{
+        .col-12{
+            .container-heading{
+                font-family: 'Raleway';
+                font-size: 42px;
+                line-height: 72px;
+                font-weight: 800;
+                color: #FD7000;
+            }
+            .btnCustom{
+                font-family: 'Lato';
+                font-size: 18px;
+                font-weight: 500;
+                color:#fff;
+                // background-color: rgba(255, 255, 255, 0.7);
+                border: 2px solid rgba(255,255, 255, 0.7);
+            }
+            .btnCustom:hover{
+                text-decoration: underline;
+                background-color: #FD7000;
+                color: #01142E;
+                border: 2px solid rgba(255,255, 255, 0.7);
+            }
+        }
+    }
+    .container{
+        .dataTable{
+            border-radius: 10px;
+            thead{
+                tr{
+                    th{
+                        font-family: 'Raleway';
+                        font-size: 18px;
+                        line-height: 18px;
+                        font-weight: 800;
+                        color: #FD7000;
+                        background-color: #01142E;
+                        padding: 1em 1em;
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    td{
+                        font-family: 'Raleway';
+                        font-size: 16px;
+                        line-height: 18px;
+                        font-weight: 500;
+                        color: #fff;
+                        background-color: #01142E;
+                        // padding: 1em .5em;
+                        .btnCustom{
+                            font-family: 'Lato';
+                            font-size: 18px;
+                            font-weight: 500;
+                            color:#fff;
+                            // background-color: rgba(255, 255, 255, 0.7);
+                            border: 2px solid rgba(255,255, 255, 0.7);
+                        }
+                        .btnCustom:hover{
+                            text-decoration: underline;
+                            background-color: #FD7000;
+                            color: #01142E;
+                            border: 2px solid rgba(255,255, 255, 0.7);
+                        }
+                        .btnDelete{
+                            font-family: 'Lato';
+                            font-size: 18px;
+                            font-weight: 500;
+                            color:#fff;
+                            // background-color: rgba(255, 255, 255, 0.7);
+                            border: 2px solid rgba(255,255, 255, 0.7);
+                        }
+                        .btnDelete:hover{
+                            text-decoration: underline;
+                            background-color: #fd1900;
+                            color: #fff;
+                            border: 2px solid rgba(255,255, 255, 0.7);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #ViewDataModal{
+        background-color: rgba(1,20,46, 0.7);
+        .modal-content{
+            .modal-title{
+                font-family: 'Raleway';
+                font-size: 20px;
+                line-height: 18px;
+                font-weight: 800;
+                color: #01142E;
+            }
+            .modal-body{
+                .dataTable{
+                    border-radius: 10px;
+                    thead{
+                        tr{
+                            th{
+                                font-family: 'Raleway';
+                                font-size: 18px;
+                                line-height: 18px;
+                                font-weight: 800;
+                                color: #FD7000;
+                                background-color: #01142E;
+                                padding: 1em 1em;
+                            }
+                        }
+                    }
+                    tbody{
+                        tr{
+                            td{
+                                font-family: 'Raleway';
+                                font-size: 16px;
+                                line-height: 18px;
+                                font-weight: 500;
+                                color: #fff;
+                                background-color: #01142E;
+                                // padding: 1em .5em;
+                                .viewDataBtn{
+                                    font-family: 'Lato';
+                                    font-size: 18px;
+                                    font-weight: 500;
+                                    color:#fff;
+                                    // background-color: rgba(255, 255, 255, 0.7);
+                                    border: 2px solid rgba(255,255, 255, 0.7);
+                                }
+                                .viewDataBtn:hover{
+                                    text-decoration: underline;
+                                    background-color: #0c64f2;
+                                    color: #01142E;
+                                    border: 2px solid rgba(255,255, 255, 0.7);
+                                }
+                                .editDataBtn{
+                                    font-family: 'Lato';
+                                    font-size: 18px;
+                                    font-weight: 500;
+                                    color:#fff;
+                                    // background-color: rgba(255, 255, 255, 0.7);
+                                    border: 2px solid rgba(255,255, 255, 0.7);
+                                }
+                                .editDataBtn:hover{
+                                    text-decoration: underline;
+                                    background-color: #08f036;
+                                    color: #01142E;
+                                    border: 2px solid rgba(255,255, 255, 0.7);
+                                }
+                                .deleteDataBtn{
+                                    font-family: 'Lato';
+                                    font-size: 18px;
+                                    font-weight: 500;
+                                    color:#fff;
+                                    // background-color: rgba(255, 255, 255, 0.7);
+                                    border: 2px solid rgba(255,255, 255, 0.7);
+                                }
+                                .deleteDataBtn:hover{
+                                    text-decoration: underline;
+                                    background-color: #851919;
+                                    color: #01142E;
+                                    border: 2px solid rgba(255,255, 255, 0.7);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // #AddDataModal{
+    //     background-color: rgba(1,20,46, 0.7);
+    //     .modal-content{
+    //         .modal-title{
+    //             font-family: 'Raleway';
+    //             font-size: 20px;
+    //             line-height: 18px;
+    //             font-weight: 800;
+    //             color: #01142E;
+    //         }
+    //         .modal-body{
+    //             .btnAdd{
+    //                 font-family: 'Lato';
+    //                 font-size: 18px;
+    //                 font-weight: 500;
+    //                 color:#000;
+    //                 // background-color: rgba(255, 255, 255, 0.7);
+    //                 border: 2px solid rgba(0,0, 0, 0.7);
+    //             }
+    //             .btnAdd:hover{
+    //                 text-decoration: underline;
+    //                 background-color: #1f8519;
+    //                 color: #fff;
+    //                 border: 2px solid rgba(0,0, 0, 0.7);
+    //             }
+    //         }
+    //     }
+    // }
+    // #EditDataModal{
+    //     background-color: rgba(1,20,46, 0.7);
+    //     .modal-content{
+    //         .modal-title{
+    //             font-family: 'Raleway';
+    //             font-size: 20px;
+    //             line-height: 18px;
+    //             font-weight: 800;
+    //             color: #01142E;
+    //         }
+    //         .modal-body{
+    //             .btnEdit{
+    //                 font-family: 'Lato';
+    //                 font-size: 18px;
+    //                 font-weight: 500;
+    //                 color:#000;
+    //                 // background-color: rgba(255, 255, 255, 0.7);
+    //                 border: 2px solid rgba(0,0, 0, 0.7);
+    //             }
+    //             .btnEdit:hover{
+    //                 text-decoration: underline;
+    //                 background-color: #194d85;
+    //                 color: #fff;
+    //                 border: 2px solid rgba(0,0, 0, 0.7);
+    //             }
+    //         }
+    //     }
+    // }
+}

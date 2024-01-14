@@ -1,0 +1,26 @@
+<div class="container-fluid pb-5">
+    <div class="row justify-content-center pt-5 pb-3">
+        <div class="col-12 text-center">
+            <h3 class="container-heading">{{ container_title }}</h3>
+        </div>
+    </div>
+    <div class="container albums">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-4 p-3" *ngFor="let album of galleryAlbum" >
+                <div class="card" [id]='album.id'>
+                    <img [src]='album.url' class="card-img-top" [alt]='album.alt' >
+                    <h1 class="card-img-title w-100">{{ album.title }}</h1>
+                    <div class="card-body overlay">
+                      <h5 class="card-title cardTitle pt-3">{{ album.title }}</h5>
+                      <p class="card-text cardDetails me-auto">{{ album.details }}</p>
+                    </div>
+                    <div class="card-footer overlay">
+                        <p class="card-text text-center">
+                            <button class="btn btnView">View More</button>
+                        </p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>

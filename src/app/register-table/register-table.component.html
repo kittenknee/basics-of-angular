@@ -1,0 +1,103 @@
+<div class="container-fluid pb-5">
+    <div class="row justify-content-center pt-5 pb-3">
+        <div class="col-12 text-center">
+            <h3 class="container-heading">{{ container_title }}</h3>
+        </div>
+    </div>
+    <div class="container table-responsive" *ngIf="receivingData.length > 0; else displayRegData" >
+        <table class="table table-bordered dataTable align-middle">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Adddress</th>
+                <th scope="col">Username</th>
+                <th scope="col">Password</th>
+                <th scope="col">Retyped Password</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let data of receivingData; let i=index">
+              <tr class="text-center">
+                <td>
+                  <p *ngIf="!data.editing">{{ data?.fname}}</p>
+                  <input type="text" class="form-control" [(ngModel)]="data.fname" *ngIf="data.editing">
+                </td>
+                <td>
+                  <p *ngIf="!data.editing">{{ data?.lname }}</p>
+                  <input type="text" class="form-control" [(ngModel)]="data.lname" *ngIf="data.editing">
+                </td>
+                <td>
+                  <p *ngIf="!data.editing">{{ data?.email }}</p>
+                  <input type="text" class="form-control" [(ngModel)]="data.email" *ngIf="data.editing">
+                </td>
+                <td>
+                  <p *ngIf="!data.editing">{{ data?.mobile }}</p>
+                  <input type="text" class="form-control" [(ngModel)]="data.mobile" *ngIf="data.editing">
+                </td>
+                <td>
+                  <p *ngIf="!data.editing">{{ data?.add }}</p>
+                  <input type="text" class="form-control" [(ngModel)]="data.add" *ngIf="data.editing">
+                </td>
+                <td>
+                  <p *ngIf="!data.editing">{{ data?.uname }}</p>
+                  <input type="text" class="form-control" [(ngModel)]="data.uname" *ngIf="data.editing">
+                </td>
+                <td>
+                  <p *ngIf="!data.editing">{{ data?.pword }}</p>
+                  <input type="text" class="form-control" [(ngModel)]="data.pword" *ngIf="data.editing">
+                </td>
+                <td>
+                  <p *ngIf="!data.editing">{{ data?.rpword }}</p>
+                  <input type="text" class="form-control" [(ngModel)]="data.rpword" *ngIf="data.editing">
+                </td>
+                <td>
+                  <div class="actions d-flex justify-content-around">
+                    
+                    <button type="button" class="btn btnEdit mx-1" (click)="edit(data)" *ngIf="!data.editing" >
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button type="button" class="btn btnSave mx-1" (click)="save(data)" *ngIf="data.editing" >
+                      <i class="bi bi-check-circle"></i>
+                    </button>
+                    <button type="button" class="btn btnDelete mx-1" (click)="cancel(data)" *ngIf="data.editing" >
+                      <i class="bi bi-x-circle"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+<ng-template #displayRegData>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 table-responsive">
+        <table class="table table-bordered dataTable">
+          <thead>
+            <tr class="text-center">
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Mobile</th>
+              <th scope="col">Adddress</th>
+              <th scope="col">Username</th>
+              <th scope="col">Password</th>
+              <th scope="col">Retyped Password</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="text-center">
+              <td class="text-center" colspan="9">No data entries...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-template>

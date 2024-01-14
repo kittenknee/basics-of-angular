@@ -1,0 +1,70 @@
+.container-fluid{
+    .row{
+        .col-12{
+            .container-heading{
+                color: #989898;
+                font-weight: 600;
+                font-size: 26px;
+                line-height: 30px;
+                letter-spacing: 5.2px;
+            }
+            .container-title{
+                color: #408db9;
+                font-size: 46px;
+            }
+            .container-quote{
+                color: #fff;
+                font-size: 16px;
+            }
+            .container-text{
+                color: #fff;
+                font-size: 16px;
+            }
+
+        }
+    }
+    .container{
+        .row{
+            .col-12{
+                .card{
+                    height: 500px;
+                    border-radius: 0px;
+                    .card-body{
+                        .cardHeading{
+                            font-family: 'Raleway';
+                            font-size: 15px;
+                            line-height: 15.5px;
+                            font-weight: 400;
+                            color: #408db9;
+                            text-align: center;
+                        }
+                        .cardHeading:hover{
+                            text-decoration: underline;
+                            color: #01142E;
+                        }
+                        .shortIt{
+                            font-family: 'Lato';
+                            font-weight: 400;
+                            font-size: 13px;
+                            line-height: 20px;
+                            text-align: center;
+                            color: #555;
+                            height: 145px;
+                            word-wrap: break-word;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                    .card-footer{
+                        border: none;
+                        a{
+                            border-radius: 25px;
+                            background-color: #000;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,167 @@
+<div class="container-fluid pb-5">
+    <div class="row justify-content-center pt-5 pb-3">
+        <div class="col-12 text-center">
+            <h3 class="container-heading">{{ container_title }}</h3>
+            <button type="button" class="btn btnCustom" data-bs-toggle="modal" data-bs-target="#AddDataModal">Add Data</button>
+        </div>
+    </div>
+    <div class="container table-responsive">
+        <table class="table table-bordered dataTable align-middle">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">ID</th>
+                <th scope="col">User ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let data of todolist; let i = index">
+              <tr class="text-center">
+                <td>{{ data?.id }}</td>
+                <td>{{ data?.userId }}</td>
+                <td class="text-start">{{ data?.title }}</td>
+                <td>
+                  <span *ngIf="data.completed == 'true' ">Completed</span>
+                  <span *ngIf="data.completed == 'false' ">Incomplete</span>
+                </td>
+                <td>
+                  <div class="actions d-flex justify-content-center">
+                    <button type="button" class="btn btnCustom mx-1" data-bs-toggle="modal" (click)="view(data.id)" data-bs-target="#ViewDataModal">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                    <button type="button" class="btn btnCustom mx-1" data-bs-toggle="modal" (click)="edit(data.id)" data-bs-target="#EditDataModal">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button type="button" class="btn btnDelete mx-1" (click)="deleteData(data.id)" >
+                      <i class="bi bi-trash3"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Viewing an entry -->
+    <div class="modal fade me-auto mx-auto ms-auto" id="ViewDataModal" tabindex="-1" aria-labelledby="ViewDataModalDefault" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">View Data:</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <table class="table table-bordered dataTable">
+                    <thead>
+                      <tr class="text-center">
+                        <th scope="col">ID</th>
+                        <th scope="col">User ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="text-center">
+                        <td>{{ viewData?.id }}</td>
+                        <td>{{ viewData?.userId }}</td>
+                        <td class="text-start">{{ viewData?.title }}</td>
+                        <td>
+                          <span *ngIf="viewData?.completed == 'true'">Completed</span>
+                          <span *ngIf="viewData?.completed == 'false'">Incomplete</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Adding an entry -->
+    <div class="modal fade me-auto mx-auto ms-auto" id="AddDataModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="AddDataModalDefault" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Add Data:</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="resetForm()"></button>
+              </div>
+              <div class="modal-body">
+                <form [formGroup]="addData" class="row g-3">
+                    <div class="col-md-6">
+                      <label for="inputEmail4" class="form-label">ID :</label>
+                      <input type="text" class="form-control" id="id" [value]='' disabled>
+                      <small class="errorMsg" *ngIf="addData.get('id')?.touched && addData.get('id')?.hasError('required')">* ID is required</small>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputPassword4" class="form-label">UserId :</label>
+                      <input type="text" class="form-control" id="userId" formControlName="userId" [(ngModel)]="userid" required>
+                      <small class="errorMsg" *ngIf="addData.get('userId')?.touched && addData.get('userId')?.hasError('required')">* User ID is required</small>
+                    </div>
+                    <div class="col-12">
+                      <label for="inputAddress" class="form-label">Title :</label>
+                      <input type="text" class="form-control" id="title" formControlName="title" [(ngModel)]="title" required>
+                      <small class="errorMsg" *ngIf="addData.get('title')?.touched && addData.get('title')?.hasError('required')">* Title is required</small>
+                    </div>
+                    <div class="col-6">
+                      <label for="inputAddress2" class="form-label">Status :</label>
+                      <select id="completed" class="form-select form-control" formControlName="completed">
+                        <option value="" selected disabled>Status...</option>
+                        <option value="true">Completed</option>
+                        <option value="false">Incomplete</option>
+                      </select>
+                      <!-- <input type="text" class="form-control" id="completed" formControlName="completed" [(ngModel)]="completed" required> -->
+                      <small class="errorMsg" *ngIf="addData.get('completed')?.touched && addData.get('completed')?.hasError('required')">* Completed is required</small>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btnAdd" (click)="onSubmit()" data-bs-dismiss="modal">Add Entry</button>
+                    </div>
+                  </form>
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Editing an entry -->
+    <div class="modal fade me-auto mx-auto ms-auto" id="EditDataModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="EditDataModalDefault" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data:</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form [formGroup]="editData" class="row g-3">
+                    <div class="col-md-6">
+                      <label for="inputEmail4" class="form-label">ID :</label>
+                      <input type="text" class="form-control" id="id" formControlName="id" [(ngModel)]="id" readonly style="background-color:  #e9ecef;" > <!-- [value]='this.updating?.id'-->
+                      <small class="errorMsg" *ngIf="editData.get('id')?.touched && editData.get('id')?.hasError('required')">* ID is required</small>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputPassword4" class="form-label">UserId :</label>
+                      <input type="text" class="form-control" id="userId" formControlName="userId" [(ngModel)]="userid" readonly style="background-color:  #e9ecef;" > <!-- [value]='this.updating?.userId'-->
+                      <small class="errorMsg" *ngIf="editData.get('userId')?.touched && editData.get('userId')?.hasError('required')">* User ID is required</small>
+                    </div>
+                    <div class="col-12">
+                      <label for="inputAddress" class="form-label">Title :</label>
+                      <input type="text" class="form-control" id="title" formControlName="title" [(ngModel)]="title"  required> <!-- [value]='this.updating?.title'-->
+                      <small class="errorMsg" *ngIf="editData.get('title')?.touched && editData.get('title')?.hasError('required')">* Title is required</small>
+                    </div>
+                    <div class="col-6">
+                      <label for="inputAddress2" class="form-label">Status :</label>
+                      <select id="completed" class="form-select form-control" formControlName="completed" [(ngModel)]="completed"  > <!-- [value]='this.updating?.completed'-->
+                        <option disabled>Status...</option>
+                        <option value="true">Completed</option>
+                        <option value="false">Incomplete</option>
+                      </select>
+                      <small class="errorMsg" *ngIf="editData.get('completed')?.touched && editData.get('completed')?.hasError('required')">* Completed is required</small>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btnEdit" (click)="onSave()" data-bs-dismiss="modal">Save Entry</button>
+                    </div>
+                  </form>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+.container-fluid{
+    .row{
+        .col-12{
+            .container-heading{
+                font-family: 'Raleway';
+                font-size: 42px;
+                line-height: 72px;
+                font-weight: 800;
+                color: #FD7000;
+            }
+        }
+    }
+    .container{
+        .dataTable{
+            border-radius: 10px;
+            thead{
+                tr{
+                    th{
+                        font-family: 'Raleway';
+                        font-size: 18px;
+                        line-height: 18px;
+                        font-weight: 800;
+                        color: #FD7000;
+                        background-color: #01142E;
+                        padding: 1em 1em;
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    td{
+                        font-family: 'Raleway';
+                        font-size: 16px;
+                        line-height: 18px;
+                        font-weight: 500;
+                        color: #fff;
+                        background-color: #01142E;
+                        // padding: 1em .5em;
+                        .sendDataBtn{
+                            font-family: 'Lato';
+                            font-size: 18px;
+                            font-weight: 500;
+                            color:#fff;
+                            // background-color: rgba(255, 255, 255, 0.7);
+                            border: 2px solid rgba(255,255, 255, 0.7);
+                        }
+                        .sendDataBtn:hover{
+                            text-decoration: underline;
+                            background-color: #FD7000;
+                            color: #01142E;
+                            border: 2px solid rgba(255,255, 255, 0.7);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #DataModal{
+        background-color: rgba(1,20,46, 0.7);
+        .modal-content{
+            .modal-title{
+                font-family: 'Raleway';
+                font-size: 20px;
+                line-height: 18px;
+                font-weight: 800;
+                color: #01142E;
+            }
+            .modal-footer{
+                .btn-save{
+                    font-family: 'Lato';
+                    font-size: 18px;
+                    font-weight: 500;
+                    color:#000;
+                    border: 2px solid rgba(0,0, 0, 0.7);
+                }
+                .btn-save:hover{
+                    text-decoration: underline;
+                    background-color: #259e4d;
+                    color: #01142E;
+                    border: 2px solid rgba(0,0, 0, 0.7);
+                }
+                .btn-exit{
+                    font-family: 'Lato';
+                    font-size: 18px;
+                    font-weight: 500;
+                    color:#000;
+                    border: 2px solid rgba(0,0, 0, 0.7);
+                }
+                .btn-exit:hover{
+                    text-decoration: underline;
+                    background-color: #FD7000;
+                    color: #01142E;
+                    border: 2px solid rgba(0,0, 0, 0.7);
+                }
+            }
+        }
+    }
+}

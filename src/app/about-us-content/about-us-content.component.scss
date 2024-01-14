@@ -1,0 +1,105 @@
+.container-fluid{
+    .row{
+        .header{
+            .container-heading{
+                color: #989898;
+                font-weight: 600;
+                font-size: 26px;
+                line-height: 30px;
+                letter-spacing: 5.2px;
+            }
+        }
+        .context{
+            .row{
+                .col-12{
+                    .quote{
+                        font-family: 'Lato';
+                        font-size: 45px;
+                        line-height: 47.5px;
+                        font-weight: 700;
+                        color: #179EEF;
+                    }
+                }
+            }
+            .row{
+                .col-md-6{
+                    .card{
+                        background-color: #0E1F39;
+                        border-color: #179eef;
+                        .card-body{
+                            padding: 1rem !important;
+                            .card_title{
+                                font-family: 'Raleway';
+                                font-size: 18px;
+                                line-height: 30px;
+                                font-weight: 200;
+                                color: #408DB9;
+                            }
+                            p{
+                                font-family: 'Lato';
+                                font-size: 16px;
+                                line-height: 28px;
+                                font-weight: 400;
+                                color: #fff;
+                                text-align: justify;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .messages{
+            .row{
+                .col-12{
+                    p{
+                        font-family: 'Lato';
+                        font-size: 16px;
+                        line-height: 26px;
+                        font-weight: 400;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) and (min-width: 320px){
+    .context{
+        .row{
+            .col-12{
+                .quote{
+                    font-size: 30px !important;
+                    line-height: 30px !important;
+                }
+            }
+        }
+        .row{
+            .col-md-6{
+                .card{
+                    .card-body{
+                        .card_title{
+                            font-size: 14px !important;
+                            line-height: 15px !important;
+                        }
+                        p{
+                            font-size: 12px !important;
+                            line-height: 15px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .messages{
+        margin-top: 0px !important;
+        .row{
+            .col-12{
+                p{
+                    font-size: 14px !important;
+                    line-height: 20px !important;
+                }
+            }
+        }
+    }
+}

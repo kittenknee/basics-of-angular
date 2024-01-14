@@ -1,0 +1,93 @@
+.container-fluid{
+    .row{
+        .col-12{
+            .container-heading{
+                color: #989898;
+                font-weight: 600;
+                font-size: 26px;
+                line-height: 30px;
+                letter-spacing: 5.2px;
+            }
+        }
+    }
+    .albums{
+        .row{
+            .col-12{
+                .card{
+                    height: 375px;
+                    width: auto;
+                    border: 2px solid #FF6502;
+                    box-shadow: 0 0 15px rgba(1, 20, 46, 0.6);
+                    img{
+                        padding: 1em 1em;
+                        height: 100% !important;
+                        width: 100%;
+                        object-fit: contain !important;
+                    }
+                    h1{
+                        position: absolute;
+                        top: 40%;
+                        font-family: 'Raleway';
+                        color: #FF6502;
+                        font-weight: 600;
+                        font-size: 24px;
+                        line-height: 30px;
+                        letter-spacing: 5.2px;
+                        text-align: center;
+                        background-color: rgba(0, 0, 0, 0.8);
+                        height: 25%;
+                        text-align: center;
+
+                    }
+                    .card-footer{
+                        border: none;
+                        .btnView{
+                            border: 2px solid #fff;
+                            color: #fff;
+                            background-color: #FF6502;
+                        }
+                        .btn:hover{
+                            border: 2px solid #FF6502;
+                            color: #fff;
+                            background-color: #000;
+                        }
+                    }
+                    .overlay{
+                        display: none;
+                        background-color: rgba(27,27,53, 0.8);
+                        .cardTitle{
+                            font-family: 'Raleway';
+                            color: #FF6502;
+                            font-weight: 600;
+                            font-size: 24px;
+                            line-height: 30px;
+                            letter-spacing: 5.2px;
+                            text-align: center;
+                        }
+                        .cardDetails{
+                            font-family: 'Raleway';
+                            color: #fff;
+                            font-weight: 300;
+                            font-size: 14px;
+                            line-height: 15px;
+                            letter-spacing: 2px;
+                            text-align: center;
+                        }
+                    }
+                }
+                .card:hover{
+                    img{
+                        display: none;
+                    }
+                    h1{
+                        display: none;
+                    }
+                    .overlay{
+                        display: block;
+                    }
+                }
+            }
+        }
+
+    }
+}
