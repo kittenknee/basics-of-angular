@@ -1,0 +1,78 @@
+.container-fluid{
+    .row{
+        .col-12{
+            .container-heading{
+                font-family: 'Raleway';
+                font-size: 42px;
+                line-height: 72px;
+                font-weight: 800;
+                color: #fff;
+            }
+        }
+    }
+    .container{
+        .dataTable{
+            border-radius: 10px;
+            thead{
+                tr{
+                    th{
+                        font-family: 'Raleway';
+                        font-size: 18px;
+                        line-height: 18px;
+                        font-weight: 800;
+                        color: #FD7000;
+                        background-color: #01142E;
+                        padding: 1em 1em;
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    td{
+                        font-family: 'Raleway';
+                        font-size: 16px;
+                        line-height: 18px;
+                        font-weight: 500;
+                        color: #fff;
+                        background-color: #01142E;
+                        .actions{
+                            .btnEdit{
+                                font-size: 18px;
+                                color: #fff;
+                                border: 1px solid #fff;
+                            }
+                            .btnEdit:hover{
+                                font-size: 18px;
+                                color: #0062ff;
+                                background-color: rgba(255, 255, 255, 0.6);
+                                border: 1px solid #fff;
+                            }
+                            .btnSave{
+                                font-size: 18px;
+                                color: #fff;
+                                border: 1px solid #fff;
+                            }
+                            .btnSave:hover{
+                                font-size: 18px;
+                                color: #00ff33;
+                                background-color: rgba(255, 255, 255, 0.6);
+                                border: 1px solid #fff;
+                            }
+                            .btnDelete{
+                                font-size: 18px;
+                                color: #fff;
+                                border: 1px solid #fff;
+                            }
+                            .btnDelete:hover{
+                                font-size: 18px;
+                                color: #ff0000;
+                                background-color: rgba(255, 255, 255, 0.6);
+                                border: 1px solid #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

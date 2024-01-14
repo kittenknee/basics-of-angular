@@ -1,0 +1,24 @@
+<div class="container-fluid pb-5">
+    <div class="row justify-content-center py-5">
+        <div class="col-12 text-center justify-content-center">
+            <h3 class="container-heading">{{ container_title }}</h3>
+            <h1 class="container-title pt-5">{{ main_title }}</h1>
+            <i><h6 class="container-quote pt-4">"{{ qoute }}"</h6></i>
+            <p class="container-text pt-3 w-75 mx-auto">{{ message }}</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row team_carousel">
+            <div class="col-12 col-md-4 card-group" *ngFor="let member of team_members">
+                <div class="card justify-content-center text-center">
+                    <img [src]="member.img_path" class="card-img-top mx-auto" [alt]="member.img_alt">
+                    <div class="card-body">
+                    <h5 class="card-title member_name">{{ member.name }}</h5>
+                    <h5 class="card-title member_position">{{ member.position }}</h5>
+                    <p class="card-text member_details">{{ member.details }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

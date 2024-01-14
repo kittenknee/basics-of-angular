@@ -1,0 +1,103 @@
+<div class="container-fluid p-2 p-md-5 pt-5 pt-md-5">
+    <div class="row justify-content-center p-2 p-md-5">
+        <div class="col-12 text-center justify-content-center header mt-3">
+            <h3 class="container-heading">{{ container_title }}</h3>
+            <p class="container-text">{{ container_text }}</p>
+        </div>
+    </div>
+    <div class="container pb-5">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="g-3 m-0">
+            <div class="row justify-content-center mt-3">
+                <div class="col-12 col-md-5">
+                <label class="form-label" for="fname">First Name: <span class="required">*</span> </label>
+                  <input type="text" class="form-control" placeholder="Enter First Name" aria-label="FName" formControlName="fname" id="fname" [(ngModel)]="fname" required>
+                  <small class="errorMsg" *ngIf="registerForm.get('fname')?.touched && registerForm.get('fname')?.hasError('required')">* First name is required</small>
+                  <small class="errorMsg" *ngIf="registerForm.get('fname')?.touched && registerForm.get('fname')?.hasError('pattern')">* Please enter a valid first name</small>
+                </div>
+                <div class="col-12 col-md-5">
+                    <label class="form-label" for="lname">Last Name: <span class="required">*</span> </label>
+                    <input type="text" class="form-control" placeholder="Last Name" aria-label="LName" formControlName="lname" id="lname" [(ngModel)]="lname" required>
+                    <small class="errorMsg" *ngIf="registerForm.get('lname')?.touched && registerForm.get('lname')?.hasError('required')">* Last name is required</small>
+                    <small class="errorMsg" *ngIf="registerForm.get('lname')?.touched && registerForm.get('lname')?.hasError('pattern')">* Please enter a valid last name</small>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-12 col-md-5">
+                    <label class="form-label" for="email">Email Address: <span class="required">*</span> </label>
+                    <input type="text" class="form-control" placeholder="Enter Email Address" aria-label="Email" formControlName="email" id="email" [(ngModel)]="email" required>
+                    <small class="errorMsg" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.hasError('required')">* Email is required</small>
+                    <small class="errorMsg" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.hasError('pattern')">* Please enter a valid email</small>
+                  </div>
+                  <div class="col-12 col-md-5">
+                    <label class="form-label" for="mobile">Mobile Number: <span class="required">*</span> </label>
+                      <input type="text" class="form-control" placeholder="Enter Mobile Number" aria-label="Mobile" formControlName="mobile" id="mobile" [(ngModel)]="mobile" required>
+                      <small class="errorMsg" *ngIf="registerForm.get('mobile')?.touched && registerForm.get('mobile')?.hasError('required')">* Mobile Number is required</small>
+                      <small class="errorMsg" *ngIf="registerForm.get('mobile')?.touched && registerForm.get('mobile')?.hasError('pattern')">* Please enter a valid number</small>
+                  </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-12 col-md-10">
+                    <label class="form-label" for="add">Address: <span class="required">*</span> </label>
+                    <input type="text" class="form-control" placeholder="Address" aria-label="Address" formControlName="add" id="add" [(ngModel)]="add" required>
+                    <small class="errorMsg" *ngIf="registerForm.get('add')?.touched && registerForm.get('add')?.hasError('required')">* Address is required</small>
+                  </div>
+            </div>
+            <hr class="division mx-auto">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-5">
+                    <label class="form-label" for="fname">Username: <span class="required">*</span> </label>
+                    <input type="text" class="form-control" placeholder="Username:" aria-label="UName" formControlName="uname" id="uname" [(ngModel)]="uname" required>
+                    <small class="errorMsg" *ngIf="registerForm.get('uname')?.touched && registerForm.get('uname')?.hasError('required')">* Username is required</small>
+                    <small class="errorMsg" *ngIf="registerForm.get('uname')?.touched && registerForm.get('uname')?.hasError('minlength') ||registerForm.get('uname')?.touched && registerForm.get('uname')?.hasError('maxlength')">* Username should be between 5 - 25 characters</small>
+                  </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-12 col-md-5">
+                    <label class="form-label" for="fname">Pasword: <span class="required">*</span> </label>
+                    <input type="password" class="form-control" placeholder="Password:" aria-label="Pass" formControlName="pword" id="pword" [(ngModel)]="pword" required>
+                    <small class="errorMsg" *ngIf="registerForm.get('pword')?.touched && registerForm.get('pword')?.hasError('required')">* Password is required</small>
+                </div>
+                <div class="col-12 col-md-5">
+                    <label class="form-label" for="fname">Retype Password: <span class="required">*</span> </label>
+                  <input type="password" class="form-control" placeholder="Retype Password:" aria-label="RPass" formControlName="rpword" id="rpword" [(ngModel)]="rpword" required>
+                  <small class="errorMsg" *ngIf="registerForm.get('rpword')?.touched && registerForm.get('rpword')?.hasError('required')">* Retype Password is required</small>
+                  <small class="errorMsg" *ngIf="registerForm.get('rpword')?.touched && registerForm.get('pword')?.value !== registerForm.get('rpword')?.value">* Retyped password doesn't match</small>
+              </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-12 col-md-5">                    
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" aria-label="Check" formControlName="check" [(ngModel)]="check" id="check">
+                        <label class="form-check-label" for="check">Agree Terms & Conditions <span class="required">*</span> </label>
+                        <br><small class="errorMsg" *ngIf="registerForm.get('check')?.touched && registerForm.get('check')?.hasError('required')">* Agreeing the terms & conditions is required</small>
+                      </div>              
+                  </div>
+                <div class="col-12 col-md-5 text-md-end text-center ">
+                    <button type="submit" class="btn Registerbtn mt-3 mt-md-0">Register</button>
+              </div>
+            </div>
+              <div class="row justify-content-center mt-3">
+                <div class="col-12 col-md-5 text-center">
+                    <small class="errorMsg" *ngIf="validateErrorMsg == true">Registration Failed! Something went wrong, try again later</small>
+                </div>
+            </div>
+          </form>
+    </div>
+    <!-- <div class="container" *ngIf="ViewData">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-5" >
+                <div class="card regDetailsCard text-center p-2">
+                    <h1>Edited Registered Data:</h1>
+                    <p class="card-details text-start">First Name : {{ViewData.fname}}</p>
+                    <p class="card-details text-start">Last Name : {{ViewData.lname}}</p>
+                    <p class="card-details text-start">Email : {{ViewData.email}}</p>
+                    <p class="card-details text-start">Mobile : {{ViewData.mobile}}</p>
+                    <p class="card-details text-start">Address : {{ViewData.add}}</p>
+                    <p class="card-details text-start">Username : {{ViewData.uname}}</p>
+                    <p class="card-details text-start">Password : {{ViewData.pword}}</p>
+                    <p class="card-details text-start">Retyped Password : {{ViewData.rpword}}</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>

@@ -1,0 +1,27 @@
+.buttons{
+    margin-top: 45px !important;
+    background-color: #01142E;
+    .showBtn{
+        font-family: 'Lato';
+        font-size: 18px;
+        font-weight: 500;
+        color:#fff;
+        // background-color: rgba(255, 255, 255, 0.7);
+        border: 2px solid rgba(255,255, 255, 0.7);
+    }
+    .showBtn:hover{
+        text-decoration: underline;
+        background-color: #FD7000;
+        color: #01142E;
+        border: 2px solid rgba(255,255, 255, 0.7);
+    }
+}
+.data{
+    background-color: #01142E;
+}
+.dataLive{
+    background-color: #01142E;
+}
+.footer{
+    background-color: #000;
+}

@@ -1,0 +1,36 @@
+<div class="container-fluid pb-5">
+    <div class="row justify-content-center p-2 p-md-5">
+        <div class="col-12 text-center justify-content-center header mt-3">
+            <h3 class="container-heading">{{ container_title }}</h3>
+            <p class="container-text">{{ container_text }}</p>
+        </div>
+    </div>
+    <div class="container">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" >
+            <div class="row justify-content-center g-3">
+                <div class="col-12 col-md-5">
+                  <input type="text" class="form-control" placeholder="Name" aria-label="Name" formControlName="name" required>
+                  <small class="errorMsg" *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.hasError('required')">* Name is required</small>
+                  <small class="errorMsg" *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.hasError('minlength') || contactForm.get('name')?.touched && contactForm.get('name')?.hasError('maxlength')">* Number of characters should be between 3-25</small>
+                  <small class="errorMsg" *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.hasError('pattern')">* Enter a proper name</small>
+                </div>
+                <div class="col-12 col-md-5">
+                  <input type="text" class="form-control" placeholder="Email" aria-label="Email" formControlName="email" required>
+                  <small class="errorMsg" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.hasError('required')">* Email is required</small>
+                  <small class="errorMsg" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.hasError('pattern')">* Enter proper email</small>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-12 col-md-10">
+                  <input type="text" class="form-control" placeholder="Message" aria-label="Message" formControlName="message">
+                  <small class="errorMsg" *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.hasError('required')">* Message is required</small>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-2 text-center">
+                    <button class="btn send-btn">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

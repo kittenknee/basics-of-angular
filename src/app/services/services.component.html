@@ -1,0 +1,30 @@
+<div class="container-fluid pb-5">
+    <div class="row justify-content-center py-5">
+        <div class="col-12 text-center">
+            <h3 class="container-heading">{{ container_title }}</h3>
+        </div>
+    </div>
+    <div class="carousel services_carousel">
+        <ngb-carousel
+        #carousel
+        [interval]="7000"
+        (slide)="onSlide($event)"
+        class="py-5-lg"
+        >
+            <ng-template ngbSlide *ngFor="let serv of services">
+                <div class="container">
+                    <div class="row row_height mb-3">
+                        <div class="col-12 col-sm-6 details_of_service me-auto">
+                            <h1 class="heading">{{ serv.heading }}</h1>
+                            <p class="details">"{{ serv.details }}"</p>
+                            <button class="btn"><a [href]="serv.link" (click)="activateChild()">{{ serv.button }}</a></button>
+                        </div>
+                        <div class="col-12 col-sm-6 picsum-img-wrapper">
+                            <img [src]="serv.img_path" [alt]="serv.img_alt" />
+                        </div>
+                    </div>
+                </div>                
+            </ng-template>
+        </ngb-carousel>
+    </div>
+</div>

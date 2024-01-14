@@ -1,0 +1,60 @@
+<div class="container-fluid p-2 p-md-5 pt-5 pt-md-5">
+    <div class="row justify-content-center">
+        <div class="col-12 text-center justify-content-center header">
+            <h3 class="container-heading">{{ container_title }}</h3>
+            <p class="container-text">{{ container_text }}</p>
+        </div>
+    </div>
+    <div class="container pt-5 pt-md-5">
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <div class="card credsCard">
+                            <div class="card-body">
+                              <h2 class="card-title d-flex justify-content-between">
+                                <p>User Credentails</p>
+                                <i class="bi bi-eye iconCred" *ngIf="!isCredEdit" (click)="viewCreds()"></i>
+                                <i class="bi bi-eye-slash iconCred" *ngIf="isCredEdit" (click)="hideCreds()"></i>
+                                </h2>
+                                <span class="d-flex">
+                                    Username:
+                                    <p class="card-text" *ngIf="!isCredEdit">username</p>
+                                </span>
+                                <span class="d-flex">
+                                    Password: 
+                                    <p class="card-text" *ngIf="!isCredEdit">**********</p> 
+                                    <p class="card-text" *ngIf="isCredEdit">Credential</p>
+                                </span>
+                              
+                              <a class="btn btn-primary" (click)="editCredentials()" *ngIf="!isCredEdit">Change Credentials</a>
+                              <a class="btn btn-primary" (click)="saveCredentials()" *ngIf="isCredEdit">Save Credentials</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Some Details</h5>
+                              <p class="card-text">Some details</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card detailsCard">
+                    <div class="card-body">
+                      <h5 class="card-title">User Details</h5>
+                      <div class="card-body-text" *ngIf="1+1 == 2">
+                        <p class="card-text" >Some details</p>
+                    </div>
+                    <a class="btn btn-primary" (click)="editDetails()">Edit Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

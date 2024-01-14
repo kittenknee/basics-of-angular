@@ -1,0 +1,40 @@
+.navbar{
+    background-color: #01142E;
+    --bs-navbar-padding-y: 0px;
+    border-bottom: 2px solid #ED772F;
+    .navbar-brand{
+    color: #fff !important;
+        img{
+            width: auto;
+            height: 50px;
+            border-radius: 5%;
+        }
+    }
+    button{
+        padding: 5px 5px;
+    }
+    ul{
+        li{
+            margin: auto auto;
+        }
+        .nav-underline{
+            width: 100px !important;
+        }
+    }
+}
+.dropdown:hover .dropdown-menu{
+    display: block;
+   
+  }
+
+  @media(max-width: 991px) and (min-width: 426px){
+    ul{
+        display: flex;
+        flex-direction: row;
+    }
+  }
+  @media(max-width: 345px){
+    .navbar-brand{
+        width: 75%;
+    }
+  }

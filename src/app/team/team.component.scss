@@ -1,0 +1,71 @@
+.container-fluid{
+    .row{
+        .col-12{
+            .container-heading{
+                color: #989898;
+                font-weight: 600;
+                font-size: 26px;
+                line-height: 30px;
+                letter-spacing: 5.2px;
+            }
+            .container-title{
+                color: #408db9;
+                font-size: 46px;
+            }
+            .container-quote{
+                color: #fff;
+                font-size: 16px;
+            }
+            .container-text{
+                color: #fff;
+                font-size: 16px;
+            }
+
+        }
+    }
+    .container{
+        .team_carousel{
+            display: flex;
+            flex-direction: row;
+            overflow-x: scroll;
+            flex-wrap: nowrap;
+            
+            .card-group{
+                .card{
+                    padding: 1em;
+                    background-color: #1B2C43;
+                    border-radius: 15px;
+                    img{
+                        width: 177px;
+                        height: auto;
+                    }
+                    .member_name{
+                        font-family: 'Lato';
+                        font-size: 24px;
+                        line-height: 28px;
+                        font-weight: 500;
+                        color: #fff;
+                    }
+                    .member_position{
+                        font-family: 'Lato';
+                        font-size: 18px;
+                        line-height: 28px;
+                        font-weight: 500;
+                        color: #ff6600;
+                    }
+                    .member_details{
+                        font-family: 'Lato';
+                        font-size: 14px;
+                        line-height: 20px;
+                        font-weight: 500;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .team_carousel::-webkit-scrollbar{
+            display: block;
+            width: 200px;
+        }
+    }
+}

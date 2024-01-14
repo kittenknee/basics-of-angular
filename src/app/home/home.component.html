@@ -1,0 +1,37 @@
+<section class="navbar">
+    <app-navbar></app-navbar>
+</section>
+<section class="carousel my-auto">
+    <div class="container-wide">
+        <app-carousel></app-carousel>
+    </div>
+</section>
+<section class="products my-auto">
+    <div class="container-wide">
+        <app-products></app-products>
+    </div>
+</section>
+<section class="services my-auto">
+    <div class="container-wide">
+        <app-services></app-services>
+    </div>
+</section>
+<section class="child my-auto" *ngIf="isActive == true">
+    <div class="container-wide">
+        <app-child-services></app-child-services>
+    </div>
+</section>
+<section class="meet_team my-auto">
+    <div class="container-wide">
+        <app-team></app-team>
+    </div>
+</section>
+<section class="our_partners my-auto">
+    <div class="container-wide">
+        <app-our-partners></app-our-partners>
+    </div>
+</section>
+<section class="footer bottom">
+    <app-footer></app-footer>
+</section>
+<router-outlet></router-outlet>
